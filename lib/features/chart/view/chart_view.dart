@@ -3,8 +3,8 @@ import 'package:stacked/stacked.dart';
 
 import '../../../view_models/chart_viewmodel.dart';
 
-class SplashView extends StatelessWidget {
-  const SplashView({Key key}) : super(key: key);
+class ChartView extends StatelessWidget {
+  const ChartView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

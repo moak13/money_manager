@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../view_models/wrapper_viewmodel.dart';
+import '../widget/get_index_view.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key key}) : super(key: key);
@@ -17,9 +18,7 @@ class SplashView extends StatelessWidget {
             centerTitle: true,
             elevation: 0,
           ),
-          body: Center(
-            child: Text('Wrapper View'),
-          ),
+          body: GetIndexView(index: model.currentIndex),
           bottomNavigationBar: BottomNavigationBar(
               backgroundColor: Colors.white,
               currentIndex: model.currentIndex,
