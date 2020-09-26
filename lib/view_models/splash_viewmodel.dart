@@ -9,7 +9,7 @@ class SplashViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   void _nextPage() {
-    _navigationService.navigateTo('wrapper-view');
+    _navigationService.pushNamedAndRemoveUntil('/wrapper-view');
   }
 
   Future handleMove() async {
