@@ -5,8 +5,8 @@ import 'package:stacked/stacked.dart';
 import '../../../view_models/wrapper_viewmodel.dart';
 import '../widget/get_index_view.dart';
 
-class SplashView extends StatelessWidget {
-  const SplashView({Key key}) : super(key: key);
+class WrapperView extends StatelessWidget {
+  const WrapperView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
