@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:stacked/stacked.dart';
 
-import '../../../../../view_models/wrapper_viewmodel.dart';
+import '../../../view_models/wrapper_viewmodel.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key key}) : super(key: key);
