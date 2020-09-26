@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Money Manager',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
+        accentColor: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       navigatorKey: _navigationService.navigatorKey,
