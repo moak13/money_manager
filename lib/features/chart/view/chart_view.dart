@@ -8,11 +8,31 @@ class ChartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double scaleHeight = height / 100;
+    double width = MediaQuery.of(context).size.width;
+    double scaleWidth = width / 100;
+    double sizeText = MediaQuery.of(context).textScaleFactor;
     return ViewModelBuilder<ChartViewModel>.reactive(
       builder: (context, model, child) {
         return Scaffold(
-            body: Center(
-          child: Text('Chart View'),
+            body: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Choice:',
+                    style: TextStyle(
+                      fontSize: sizeText * 15,
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
         ));
       },
       viewModelBuilder: () => ChartViewModel(),

@@ -49,7 +49,7 @@ class HomeView extends StatelessWidget {
                   children: <Widget>[
                     BoardDisplay(
                       title: 'Income',
-                      amount: 0,
+                      amount: model.income,
                       sizeText: sizeText,
                     ),
                     Stick(
@@ -58,7 +58,7 @@ class HomeView extends StatelessWidget {
                     ),
                     BoardDisplay(
                       title: 'Expense',
-                      amount: 0,
+                      amount: model.expenses,
                       sizeText: sizeText,
                     ),
                     Stick(
@@ -67,7 +67,7 @@ class HomeView extends StatelessWidget {
                     ),
                     BoardDisplay(
                       title: 'Balance',
-                      amount: 0,
+                      amount: model.balance,
                       sizeText: sizeText,
                     ),
                   ],
@@ -82,14 +82,15 @@ class HomeView extends StatelessWidget {
                   height: scaleHeight * 47,
                   child: ListView.builder(
                       padding: const EdgeInsets.all(20),
-                      itemCount: 10,
+                      itemCount: model.transactionListData.length,
                       itemBuilder: (context, index) {
                         return TransactionCard(
                           scaleHeight: scaleHeight,
                           textSize: sizeText,
-                          title: 'Dog Food',
-                          amount: 900,
-                          isExpense: true,
+                          title: model.transactionListData[index].title,
+                          amount: model.transactionListData[index].amount,
+                          isExpense:
+                              model.transactionListData[index].isExpenses,
                         );
                       }))
             ],
