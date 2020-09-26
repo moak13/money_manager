@@ -78,25 +78,29 @@ class HomeView extends StatelessWidget {
                 style: TextStyle(
                     fontSize: sizeText * 20, fontWeight: FontWeight.w600),
               ),
-              Container(
-                  height: scaleHeight * 47,
-                  child: ListView.builder(
-                      padding: const EdgeInsets.all(20),
-                      itemCount: model.transactionListData.length,
-                      itemBuilder: (context, index) {
-                        return TransactionCard(
-                          scaleHeight: scaleHeight,
-                          textSize: sizeText,
-                          title: model.transactionListData[index].title,
-                          amount: model.transactionListData[index].amount,
-                          isExpense:
-                              model.transactionListData[index].isExpenses,
-                        );
-                      }))
+              Expanded(
+                child: Container(
+                    height: scaleHeight * 47,
+                    child: ListView.builder(
+                        padding: const EdgeInsets.all(20),
+                        itemCount: model.transactionListData.length,
+                        itemBuilder: (context, index) {
+                          return TransactionCard(
+                            scaleHeight: scaleHeight,
+                            textSize: sizeText,
+                            title: model.transactionListData[index].title,
+                            amount: model.transactionListData[index].amount,
+                            isExpense:
+                                model.transactionListData[index].isExpenses,
+                          );
+                        })),
+              )
             ],
           ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              model.moveToCategory();
+            },
             child: Icon(FontAwesomeIcons.plus),
           ),
         );
