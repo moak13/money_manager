@@ -4,7 +4,9 @@ import 'package:stacked_services/stacked_services.dart';
 import 'core/utils/router.gr.dart';
 import 'locator.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupLocator();
   runApp(MyApp());
 }
 
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Money Manager',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
