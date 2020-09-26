@@ -22,6 +22,7 @@ class CategoryView extends StatelessWidget {
             elevation: 0,
           ),
           body: GridView.builder(
+              padding: const EdgeInsets.all(10),
               itemCount: model.categoryExpenseList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -29,13 +30,17 @@ class CategoryView extends StatelessWidget {
                 crossAxisSpacing: 10,
               ),
               itemBuilder: (context, index) {
-                return CategoryCard(
-                  scaleHeight: scaleHeight,
-                  scaleWidth: scaleWidth,
-                  sizeText: sizeText,
-                  icon: model.categoryExpenseList[index].icon,
-                  title: model.categoryExpenseList[index].title,
-                );
+                return InkWell(
+                    onTap: () {
+                      model.moveToBudget(model.categoryExpenseList[index]);
+                    },
+                    child: CategoryCard(
+                      scaleHeight: scaleHeight,
+                      scaleWidth: scaleWidth,
+                      sizeText: sizeText,
+                      icon: model.categoryExpenseList[index].icon,
+                      title: model.categoryExpenseList[index].title,
+                    ));
               }),
         );
       },
