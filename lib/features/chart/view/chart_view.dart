@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pie_chart/pie_chart.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../view_models/chart_viewmodel.dart';
@@ -28,9 +29,15 @@ class ChartView extends StatelessWidget {
                     style: TextStyle(
                       fontSize: sizeText * 15,
                     ),
-                  )
+                  ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: scaleHeight * 20,
+            ),
+            PieChart(
+              dataMap: model.dataMap,
             )
           ],
         ));
