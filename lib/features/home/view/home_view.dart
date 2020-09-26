@@ -5,6 +5,7 @@ import 'package:stacked/stacked.dart';
 import '../../../view_models/home_viewmodel.dart';
 import '../widget/board_display.dart';
 import '../widget/stick.dart';
+import '../widget/transaction_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
@@ -71,7 +72,26 @@ class HomeView extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+              Text(
+                'Transactions',
+                style: TextStyle(
+                    fontSize: sizeText * 20, fontWeight: FontWeight.w600),
+              ),
+              Container(
+                  height: scaleHeight * 47,
+                  child: ListView.builder(
+                      padding: const EdgeInsets.all(20),
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return TransactionCard(
+                          scaleHeight: scaleHeight,
+                          textSize: sizeText,
+                          title: 'Dog Food',
+                          amount: 900,
+                          isExpense: true,
+                        );
+                      }))
             ],
           ),
           floatingActionButton: FloatingActionButton(
